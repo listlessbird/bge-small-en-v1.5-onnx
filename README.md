@@ -28,7 +28,7 @@ This is a project-controlled export, not an upstream BAAI release.
 Add the package directly from the tagged GitHub source:
 
 ```bash
-uv add "bge-small-onnx @ git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.1"
+uv add "bge-small-onnx @ git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.2"
 ```
 
 Queries and documents have separate methods because BGE applies an instruction
@@ -57,10 +57,10 @@ model. Pass `threads=N` to set ONNX Runtime's intra-op thread count.
 The CLI supports small encoding jobs and artifact verification:
 
 ```bash
-uvx --from "git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.1" \
+uvx --from "git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.2" \
   bge-small-onnx encode "why did the deploy fail?"
 
-uvx --from "git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.1" \
+uvx --from "git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.2" \
   bge-small-onnx verify
 ```
 

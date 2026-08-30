@@ -8,10 +8,6 @@ resolution-markers = [
     "python_full_version < '3.12'",
 ]
 
-[options]
-exclude-newer = "2026-08-23T16:00:31.163530893Z"
-exclude-newer-span = "P7D"
-
 [[package]]
 name = "annotated-doc"
 version = "0.0.5"
@@ -36,7 +32,7 @@ wheels = [
 
 [[package]]
 name = "bge-small-onnx"
-version = "1.0.1"
+version = "1.0.2"
 source = { editable = "." }
 dependencies = [
     { name = "huggingface-hub" },
