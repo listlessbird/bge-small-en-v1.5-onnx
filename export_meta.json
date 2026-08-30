@@ -1,0 +1,19 @@
+{
+  "source_model": "BAAI/bge-small-en-v1.5",
+  "source_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "opset": 18,
+  "tokenizer_sha256": "0d3aef594edd5f9b53e7f814277a9171dc70ff93eb66bda6e01f7aa53997d963",
+  "max_length": 256,
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "pooling": "cls",
+  "normalization": "l2",
+  "dimension": 384,
+  "quantization": "int8-dynamic",
+  "input_names": [
+    "input_ids",
+    "attention_mask",
+    "token_type_ids"
+  ],
+  "output_name": "embeddings",
+  "minimum_reference_cosine": 0.99
+}

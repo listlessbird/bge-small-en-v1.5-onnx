@@ -1,0 +1,7 @@
+This repository redistributes a quantized export derived from
+BAAI/bge-small-en-v1.5, pinned at commit
+5c38ec7c405ec4b44b94cc5a9bb96e735b38267a.
+
+The source model is published by the Beijing Academy of Artificial
+Intelligence under the MIT License:
+https://huggingface.co/BAAI/bge-small-en-v1.5

@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bge-small-onnx"
+version = "1.0.0"
+description = "Pinned INT8 ONNX runtime for BAAI/bge-small-en-v1.5"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Ril" }]
+keywords = ["bge", "embeddings", "onnx", "retrieval"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "huggingface-hub>=0.27,<2",
+  "numpy>=1.26,<3",
+  "onnxruntime>=1.19,<2",
+  "tokenizers>=0.20,<1",
+]
+
+[project.optional-dependencies]
+export = [
+  "onnx>=1.17,<2",
+  "torch>=2.5,<3",
+  "transformers>=4.46,<6",
+]
+
+[dependency-groups]
+dev = [
+  "pyright>=1.1.390,<2",
+  "pytest>=8.3,<10",
+  "ruff>=0.9,<1",
+]
+
+[project.scripts]
+bge-small-onnx = "bge_small_onnx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/listlessbird/bge-small-en-v1.5-onnx"
+Repository = "https://github.com/listlessbird/bge-small-en-v1.5-onnx"
+"Model artifacts" = "https://huggingface.co/listlessbird/bge-small-en-v1.5-onnx"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bge_small_onnx"]
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = ["model: requires the published ONNX artifact"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "RUF", "SIM", "UP"]
