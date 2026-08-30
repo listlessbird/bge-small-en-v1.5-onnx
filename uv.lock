@@ -9,7 +9,7 @@ resolution-markers = [
 ]
 
 [options]
-exclude-newer = "2026-08-23T15:53:07.792698928Z"
+exclude-newer = "2026-08-23T16:00:31.163530893Z"
 exclude-newer-span = "P7D"
 
 [[package]]
@@ -36,7 +36,7 @@ wheels = [
 
 [[package]]
 name = "bge-small-onnx"
-version = "1.0.0"
+version = "1.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "huggingface-hub" },

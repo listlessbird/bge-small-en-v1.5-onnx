@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bge-small-onnx"
-version = "1.0.0"
+version = "1.0.1"
 description = "Pinned INT8 ONNX runtime for BAAI/bge-small-en-v1.5"
 readme = "README.md"
 requires-python = ">=3.11"
