@@ -1,5 +1,3 @@
-"""Download and validate the exact published model artifact."""
-
 from __future__ import annotations
 
 import hashlib

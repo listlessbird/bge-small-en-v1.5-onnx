@@ -1,5 +1,3 @@
-"""Small ONNX Runtime wrapper with separate query and document methods."""
-
 from __future__ import annotations
 
 from collections.abc import Sequence

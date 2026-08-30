@@ -11,17 +11,12 @@ tags:
 
 # BGE small English v1.5 ONNX
 
-A pinned INT8 ONNX export of
+INT8 ONNX export of
 [`BAAI/bge-small-en-v1.5`](https://huggingface.co/BAAI/bge-small-en-v1.5)
-with a small Python runtime. It produces normalized 384-dimensional embeddings
-without PyTorch or Transformers.
+with a small Python runtime.produces normalized 384-dimensional embeddings
 
-The model files live on
 [Hugging Face](https://huggingface.co/listlessbird/bge-small-en-v1.5-onnx).
-[GitHub](https://github.com/listlessbird/bge-small-en-v1.5-onnx) contains the
-runtime, export script, tests, and release history.
 
-This is a project-controlled export, not an upstream BAAI release.
 
 ## Use it
 
@@ -81,14 +76,11 @@ uvx --from "git+https://github.com/listlessbird/bge-small-en-v1.5-onnx.git@v1.0.
 Changing any item in this contract creates incompatible embeddings. Existing
 document indexes must use the same contract as their query encoder.
 
-The published model SHA-256 is
-`6fb40fbcdf3dcc7a3fed12d56ff2d1324f69d0b7fd6c5afe05f4530a6142fdf8`.
 Six query and document fixtures measured cosine similarity from 0.993772 to
 0.997500 against the pinned PyTorch model.
 
 On a Raspberry Pi ARM64 container limited to two CPUs and 768 MiB, 100 query
-encodes measured 26.97 ms p50 and 28.89 ms p95. Loading the encoder increased
-process RSS by 127,766,528 bytes.
+encodes measured 26.97 ms p50 and 28.89 ms p95.
 
 ## Reproduce the export
 
@@ -100,11 +92,6 @@ cd bge-small-en-v1.5-onnx
 uv sync --all-groups --extra export
 uv run python export_bge_onnx.py ./artifacts/new-export
 ```
-
-The output directory must not exist. The script downloads the pinned source
-revision, exports an fp32 graph, quantizes it, and checks six fixed fixtures.
-It deletes the intermediate fp32 graph only after every fixture reaches 0.99
-cosine similarity.
 
 The output contains:
 
@@ -132,3 +119,6 @@ RUN_MODEL_SMOKE=1 uv run pytest -m model
 
 The code in this repository is MIT licensed. See `NOTICE` for the source model
 attribution.
+
+
+Made this to be used in [mimeme](https://github.com/listlessbird/mimeme)
